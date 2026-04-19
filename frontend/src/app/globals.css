@@ -1,0 +1,3 @@
+/* Global resets beyond design-tokens.css */
+a { color: inherit; }
+button { font-family: inherit; }

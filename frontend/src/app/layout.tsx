@@ -1,25 +1,26 @@
-import type { Metadata } from 'next';
-import Providers from './providers';
-import ErrorBoundary from '@/components/molecules/ErrorBoundary';
+'use client';
+
+import { ReactNode, useState } from 'react';
 import '@/styles/design-tokens.css';
-import '@/styles/responsive.css';
+import '@/styles/compact-design.css';
+import './globals.css';
+import Providers from './providers';
+import Sidebar from '@/components/organisms/Sidebar';
+import TopHeader from '@/components/organisms/TopHeader';
 
-export const metadata: Metadata = {
-  title: 'EWMS — Export Workflow Management',
-  description: 'End-to-end workflow for India-to-US steel exports',
-};
+export default function RootLayout({ children }: { children: ReactNode }) {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
   return (
     <html lang="en">
       <body>
-        <ErrorBoundary>
-          <Providers>{children}</Providers>
-        </ErrorBoundary>
+        <Providers>
+          <div className="main-layout">
+            <Sidebar open={sidebarOpen} onToggle={() => setSidebarOpen(!sidebarOpen)} />
+            <TopHeader onMenuClick={() => setSidebarOpen(!sidebarOpen)} />
+            <div className="content">{children}</div>
+          </div>
+        </Providers>
       </body>
     </html>
   );
