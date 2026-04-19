@@ -1,0 +1,57 @@
+/* Mobile-first responsive overrides */
+
+/* Small mobile (≤480px) */
+@media (max-width: 480px) {
+  h1 { font-size: var(--t-2xl); }
+
+  .metrics-grid,
+  .kpi-grid,
+  .risk-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .shipment-meta {
+    flex-direction: column;
+    gap: var(--s-2);
+  }
+
+  .navbar-search { display: none; }
+
+  .dashboard-main,
+  .tasks-main,
+  .dd-risk-main,
+  .analytics-main {
+    padding: var(--s-4);
+  }
+}
+
+/* Tablet (768px+) */
+@media (min-width: 768px) {
+  .metrics-grid,
+  .kpi-grid,
+  .risk-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .navbar-menu { display: flex; }
+  .mobile-menu-btn { display: none; }
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+  .metrics-grid,
+  .kpi-grid,
+  .risk-summary-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Large desktop (1440px+) */
+@media (min-width: 1440px) {
+  .dashboard-main,
+  .tasks-main,
+  .dd-risk-main,
+  .analytics-main {
+    padding: var(--s-12);
+  }
+}

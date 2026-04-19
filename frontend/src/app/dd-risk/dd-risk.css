@@ -1,0 +1,153 @@
+.dd-risk-main {
+  min-height: calc(100vh - 72px);
+  background: var(--bg);
+  padding: var(--s-8);
+}
+
+.dd-risk-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.dd-risk-container h1 { margin-bottom: var(--s-2); }
+
+.subtitle {
+  color: var(--fg-muted);
+  font-size: var(--t-md);
+  margin-bottom: var(--s-8);
+}
+
+.risk-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--s-4);
+  margin-bottom: var(--s-10);
+}
+
+.risk-card {
+  background: var(--bg-elev);
+  border: 2px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--s-6);
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--dur-base) var(--ease-out);
+}
+
+.risk-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+.risk-card.critical { border-color: var(--st-canceled-fg); }
+.risk-card.critical .icon { background: var(--st-canceled-bg); color: var(--st-canceled-fg); }
+.risk-card.high { border-color: var(--st-pending-fg); }
+.risk-card.high .icon { background: var(--st-pending-bg); color: var(--st-pending-fg); }
+.risk-card.medium { border-color: var(--warning); }
+.risk-card.medium .icon { background: var(--warning-soft); color: var(--warning); }
+.risk-card.cost { border-color: var(--brand-green); }
+.risk-card.cost .icon { background: var(--brand-green-soft); color: var(--brand-green); }
+
+.icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content { flex: 1; }
+
+.label {
+  font-size: var(--t-sm);
+  color: var(--fg-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--tr-wide);
+  margin-bottom: var(--s-1);
+}
+
+.value {
+  font-size: var(--t-3xl);
+  font-weight: var(--w-black);
+  color: var(--fg);
+}
+
+.shipments-at-risk {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--s-6);
+  box-shadow: var(--shadow-sm);
+}
+
+.shipments-at-risk h2 { margin-bottom: var(--s-6); }
+
+.risk-list { display: flex; flex-direction: column; gap: var(--s-4); }
+
+.risk-item {
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: var(--s-6);
+  background: var(--n-50);
+}
+
+.risk-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--s-4);
+}
+
+.risk-header h3 { margin: 0; }
+
+.risk-badge {
+  padding: var(--s-2) var(--s-4);
+  border-radius: var(--r-md);
+  font-size: var(--t-sm);
+  font-weight: var(--w-semibold);
+  text-transform: uppercase;
+}
+
+.risk-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--s-6);
+  margin-bottom: var(--s-4);
+}
+
+.detail .label {
+  font-size: var(--t-xs);
+  color: var(--fg-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--tr-snug);
+  margin-bottom: var(--s-1);
+}
+
+.detail .value {
+  font-size: var(--t-lg);
+  font-weight: var(--w-bold);
+  color: var(--fg);
+}
+
+.risk-actions { display: flex; gap: var(--s-3); }
+
+.btn-primary,
+.btn-secondary {
+  padding: var(--s-3) var(--s-4);
+  border: none;
+  border-radius: var(--r-md);
+  font-size: var(--t-sm);
+  font-weight: var(--w-semibold);
+  cursor: pointer;
+  transition: all var(--dur-base) var(--ease-out);
+  font-family: var(--font-sans);
+  flex: 1;
+}
+
+.btn-primary { background: var(--brand-green); color: white; }
+.btn-primary:hover { background: var(--brand-green-hover); }
+.btn-secondary { background: transparent; border: 1px solid var(--border); color: var(--fg); }
+.btn-secondary:hover { background: var(--n-100); }
+
+.empty-state { text-align: center; padding: var(--s-10); color: var(--fg-muted); }
